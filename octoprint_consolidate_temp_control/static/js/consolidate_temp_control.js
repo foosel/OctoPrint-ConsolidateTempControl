@@ -44,10 +44,11 @@ $(function() {
         };
 
         self.onAllBound = function(allViewModels) {
-                var selected = OctoPrint.coreui.selectedTab;
-                OctoPrint.coreui.selectedTab = "#control";
-                self.controlViewModel.onAllBound(allViewModels);
-                OctoPrint.coreui.selectedTab = selected;
+			var selected = OctoPrint.coreui.selectedTab;
+			OctoPrint.coreui.selectedTab = "#control";
+			self.controlViewModel.onAllBound(allViewModels);
+			OctoPrint.coreui.selectedTab = selected;
+			self.temperatureViewModel._initializePlot();
         };
 		
         self.controlViewModel.onBrowserTabVisibilityChange = function(status) {
