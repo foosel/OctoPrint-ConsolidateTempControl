@@ -11,7 +11,7 @@ plugin_package = "octoprint_consolidate_temp_control"
 
 # The plugin's human readable name. Can be overwritten within OctoPrint's internal data via __plugin_name__ in the
 # plugin module
-plugin_name = "OctoPrint-ConsolidateTempControl"
+plugin_name = "Consolidate Temp Control"
 
 # The plugin's version. Can be overwritten within OctoPrint's internal data via __plugin_version__ in the plugin module
 plugin_version = "0.1.3"
@@ -24,7 +24,7 @@ plugin_description = """Small plugin to show how to consolidate temperature and 
 plugin_author = "jneilliii"
 
 # The plugin's author's mail address.
-plugin_author_email = "gina@octoprint.org"
+plugin_author_email = "jneilliii+github@gmail.com"
 
 # The plugin's homepage URL. Can be overwritten within OctoPrint's internal data via __plugin_url__ in the plugin module
 plugin_url = "https://github.com/jneilliii/OctoPrint-ConsolidateTempControl"
