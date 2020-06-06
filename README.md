@@ -1,8 +1,10 @@
 # Consolidate Temp Control
 
-Based on foosel's original [Proof of Concept](https://github.com/foosel/OctoPrint-ConsolidateTempControl/), this plugin consolidates the temperature and control tabs into one. Modifications to foosel's original source includes making the overall UI more compatible with widescreen displays and puts the temperature and control tabs next to each other instead of stacked on top of each other. Also implemented hack to hide original Temperature and Control tabs from view.
+Based on foosel's original [Proof of Concept](https://github.com/foosel/OctoPrint-ConsolidateTempControl/), this plugin consolidates the temperature and control tabs into one. Modifications to foosel's original source includes making the layout vertical as in the original or horizontal (default setting) to be more compatible with widescreen displays. Also implemented hack to hide original Temperature and Control tabs from view and ordering.
 
 ![Screenshot](screenshot.png)
+
+![Screenshot](screenshot_settings.png)
 
 ## Known Issues
   - Occasionaly the webcam stream isn't detected.  Swapping tabs or refreshing the page usually brings it back.
