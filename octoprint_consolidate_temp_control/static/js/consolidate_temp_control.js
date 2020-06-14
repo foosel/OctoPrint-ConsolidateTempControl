@@ -14,6 +14,7 @@ $(function() {
 									});
 								return tabs;
 							});
+		self.active_settings = '';
 
 		self.onBeforeBinding = function(){
 			// don't load when touchui is active and hide tab.
@@ -24,7 +25,7 @@ $(function() {
 
 			// move original temp and control tab content and remove tab links.
 			ko.utils.arrayForEach(self.tab_order_selector(), function(tab) {
-				$(tab).appendTo('#tab_plugin_consolidate_temp_control > div.row-fluid').removeClass('tab-pane').addClass('span6');
+				$(tab).appendTo('#tab_plugin_consolidate_temp_control > div.row-fluid').removeClass('tab-pane');
 			});
 			$('#temp_link, #control_link').remove();
 
@@ -47,6 +48,7 @@ $(function() {
 				}
 
 				// tabs adjustments
+				$('#tab_plugin_consolidate_temp_control > div.row-fluid > div').addClass('span6');
 				if($('div#settings_plugin_themeify').length == 0 && !self.dragonorder){
 					$('div.container.octoprint-container > div.row > div.tabbable.span8').removeClass('span8').addClass('span10');
 					$('div#tabs_content div.tab-pane:not("#tab_plugin_consolidate_temp_control")').wrapInner('<div class="span6"></div>');
@@ -60,8 +62,15 @@ $(function() {
 			}
 		}
 
+		self.onSettingsShown = function(){
+			self.active_settings = ko.toJSON(self.settings.settings.plugins.consolidate_temp_control);
+		}
+
 		self.onEventSettingsUpdated = function(){
-			self.onBeforeBinding();
+			if(ko.toJSON(self.settings.settings.plugins.consolidate_temp_control) !== self.active_settings) {
+				$('#reloadui_overlay_wrapper > div > div > p:nth-child(2)').html('Consolidated Temp Control layout changes detected, you must reload now for these new changes to take effect. This will not interrupt any print jobs you might have ongoing.');
+				$('#reloadui_overlay').modal();
+			}
 		}
 
 		// fix control tab
