@@ -14,7 +14,6 @@ $(function() {
 									});
 								return tabs;
 							});
-		self.active_settings = '';
 
 		self.onBeforeBinding = function(){
 			// don't load when touchui is active and hide tab.
@@ -64,7 +63,7 @@ $(function() {
 			}
 		}
 
-		self.onSettingsShown = function(){
+		self.onAfterBinding = function(){
 			self.active_settings = ko.toJSON(self.settings.settings.plugins.consolidate_temp_control);
 		}
 
