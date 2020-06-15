@@ -34,8 +34,10 @@ $(function() {
 				$('div.page-container').css({'min-width':'1900px'});
 
 				// navbar adjustments
-				$('#navbar > div.navbar-inner > div.container').css({'width':'100%'});
-				$('#navbar > div.navbar-inner > div.row-fluid > div.nav-collapse').css({'padding-right':'20px'});
+				if(self.settings.settings.plugins.consolidate_temp_control.resize_navbar()){
+					$('#navbar > div.navbar-inner > div.container').css({'width':'100%'});
+					$('#navbar > div.navbar-inner > div.row-fluid > div.nav-collapse').css({'padding-right':'20px'});
+				}
 
 				// main content adjustments
 				$('div.container.octoprint-container').addClass('row-fluid');
