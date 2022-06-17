@@ -27,7 +27,7 @@ $(function() {
 			ko.utils.arrayForEach(self.tab_order_selector(), function(tab) {
 				$(tab).appendTo('#tab_plugin_consolidate_temp_control > div.row-fluid').removeClass('tab-pane');
 			});
-			$('#temp_link, #control_link').remove();
+			$('#temp_link, #control_link, #tab_plugin_plotlytempgraph_link').remove();
 
 			if(self.settings.settings.plugins.consolidate_temp_control.layout() == 'horizontal' && (screen.width >= parseInt(self.settings.settings.plugins.consolidate_temp_control.resolution_threshold(), 10) && self.settings.settings.plugins.consolidate_temp_control.resolution_threshold() >= 0)){
 				// page container adjustments
